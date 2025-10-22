@@ -8,9 +8,12 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, ... }: {
     nixosConfigurations.selkie = nixpkgs.lib.nixosSystem {
-      modules = [ ./hosts/selkie ];
+      modules = [
+        lanzaboote.nixosModules.lanzaboote
+        ./hosts/selkie
+      ];
     };
   };
 }
