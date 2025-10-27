@@ -4,14 +4,17 @@
   home.username = "maia";
   home.homeDirectory = "/home/maia";
 
+  imports = [
+    ./mail.nix
+  ];
+
   home.packages = with pkgs; [
     kitty
 
     discord
-    thunderbird
-    protonmail-bridge
 
     git
+    git-lfs
     devenv
     jetbrains.phpstorm
   ];
