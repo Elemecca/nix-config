@@ -5,19 +5,22 @@
   home.homeDirectory = "/home/maia";
 
   imports = [
+    ./devtools.nix
     ./mail.nix
+    ./security.nix
+    ./shell.nix
   ];
 
-  home.packages = with pkgs; [
-    kitty
+  programs.discord.enable = true;
 
-    discord
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
 
-    git
-    git-lfs
-    devenv
-    jetbrains.phpstorm
-  ];
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
