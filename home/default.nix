@@ -11,6 +11,11 @@
     ./shell.nix
   ];
 
+  home.packages = with pkgs; [
+    gimp
+    kicad
+  ];
+
   programs.discord.enable = true;
 
   programs.neovim = {

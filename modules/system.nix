@@ -33,6 +33,7 @@
     file
     htop
     neovim
+    squashfs-tools-ng
     tree
   ];
 
