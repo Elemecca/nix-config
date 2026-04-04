@@ -8,4 +8,15 @@
   services.flatpak.enable = true;
 
   programs.firefox.enable = true;
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      hplip  # HP laser printers
+    ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    system-config-printer
+  ];
 }
