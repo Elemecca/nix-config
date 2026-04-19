@@ -43,7 +43,7 @@
   users.users.maia = {
     isNormalUser = true;
     description = "Maia";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd" ];
     shell = pkgs.zsh;
   };
 }

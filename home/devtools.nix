@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     devenv
     jetbrains.phpstorm
+    vagrant
   ];
 
   programs.git = {

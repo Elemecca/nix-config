@@ -19,4 +19,6 @@
   environment.systemPackages = with pkgs; [
     system-config-printer
   ];
+
+  virtualisation.libvirtd.enable = true;
 }
