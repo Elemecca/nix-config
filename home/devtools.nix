@@ -19,4 +19,6 @@
       color.ui = "auto";
     };
   };
+
+  programs.direnv.enable = true;
 }
