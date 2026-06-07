@@ -17,10 +17,18 @@
   };
 
   environment.systemPackages = with pkgs; [
+    podman-compose
     system-config-printer
   ];
 
   virtualisation.libvirtd.enable = true;
+
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   nix.settings = {
     substituters = [
@@ -30,4 +38,8 @@
       "fossar.cachix.org-1:Zv6FuqIboeHPWQS7ysLCJ7UT7xExb4OE8c4LyGb5AsE="
     ];
   };
+
+  # make /etc/hosts a regular file, rather than a symlink to the Nix store
+  # this allows temporary edits for local development work
+  environment.etc.hosts.mode = "0644";
 }
