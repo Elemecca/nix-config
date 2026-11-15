@@ -13,8 +13,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.systemd.enable = true;
-  boot.initrd.verbose = false;
   boot.plymouth.enable = true;
   boot.consoleLogLevel = 3;
   boot.kernelParams = [ "quiet" "splash" ];
